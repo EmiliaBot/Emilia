@@ -143,26 +143,27 @@ home_keyboard_pm = InlineKeyboardMarkup(
 home_text_pm = (
         f"Hey there! My name is Emilia - I'm here to help you manage your groups! "
         + "Hit /help to find out more about how to use me to my full potential. "
+        + "Join my news channel to get information on all the latest updates. "
 )
 
 keyboard = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Help ❓",
-                url=f"t.me/{BOT_USERNAME}?start=help",
-            ),
-            InlineKeyboardButton(
-                text="Repo",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                text="Add Me To Group",
+                url=f"t.me/EmiliaHeartBot?startgroup=botstart",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="System Stats 💻",
-                callback_data="stats_callback",
+                text="Group",
+                url=f"t.me/devschats",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(
+                text="Channel",
+                url=f"https://t.me/emiliaupdates",
+            ),
+            InlineKeyboardButton(text="Help & Commands", url=f"t.me/{BOT_USERNAME}?start=help"),
         ],
     ]
 )
