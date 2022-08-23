@@ -136,9 +136,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin [my news channel](https://t.me/itsarebots) to get information on all the latest updates. "
+        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin [my news channel](https://t.me/itsarebots) to get information on all the latest updates. ", disable_web_page_preview=True
 )
-disable_web_page_preview=True
 
 keyboard = InlineKeyboardMarkup(
     [
