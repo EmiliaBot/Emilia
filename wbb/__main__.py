@@ -115,27 +115,20 @@ home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Commands ❓", callback_data="bot_commands"
-            ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                text="Add Me To Group",
+                url=f"t.me/EmiliaHeartBot?startgroup=botstart",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="System Stats 🖥",
-                callback_data="stats_callback",
+                text="Group",
+                url=f"t.me/devschats",
             ),
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="Channel",
+                url=f"https://t.me/emiliaupdates",
             ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="Add Me To Your Group 🎉",
-                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
-            )
+            InlineKeyboardButton(text="Help & Commands", url=f"t.me/{BOT_USERNAME}?start=help"),
         ],
     ]
 )
