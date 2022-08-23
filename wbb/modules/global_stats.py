@@ -145,7 +145,7 @@ async def global_stats(_, message):
     **{served_users}** Users, Across **{served_chats}** chats.
     **{developers}** Developers And **{commits}** Commits On **[Github]({rurl})**.
 
-**Global Stats of {USERBOT_NAME}**:
+**Global Stats of UserBot**:
     **{total_ub} Dialogs.**
     **{groups_ub} Groups Joined.**
     **{channels_ub} Channels Joined.**
