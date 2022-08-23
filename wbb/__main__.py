@@ -77,7 +77,7 @@ async def start_bot():
             bot_modules += "|{:<15}".format(i)
         j += 1
     print("+===============================================================+")
-    print("|                              WBB                              |")
+    print("|                         EMILIA STARTING                              |")
     print("+===============+===============+===============+===============+")
     print(bot_modules)
     print("+===============+===============+===============+===============+")
@@ -141,9 +141,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"Hey there! My name is {BOT_NAME}. I can manage your "
-        + "group with lots of useful features, feel free to "
-        + "add me to your group."
+        f"Hey there! My name is Emilia - I'm here to help you manage your groups! "
+        + "Hit /help to find out more about how to use me to my full potential. "
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -154,7 +153,7 @@ keyboard = InlineKeyboardMarkup(
                 url=f"t.me/{BOT_USERNAME}?start=help",
             ),
             InlineKeyboardButton(
-                text="Repo 🛠",
+                text="Repo",
                 url="https://github.com/thehamkercat/WilliamButcherBot",
             ),
         ],
