@@ -126,17 +126,17 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Channel",
-                url=f"https://t.me/emiliaupdates",
+                url=f"https://t.me/emiliabotupdates",
             ),
         ],
         [
-            InlineKeyboardButton(text="Help & Commands", url=f"t.me/{BOT_USERNAME}?start=help"),
+            InlineKeyboardButton(text="Help & Commands", callback_data="bot_commands"),
         ],
     ]
 )
 
 home_text_pm = (
-        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin my news channel to get information on all the latest updates. "
+        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin [my news channel](https://t.me/emiliabotupdates) to get information on all the latest updates. "
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -154,11 +154,11 @@ keyboard = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Channel",
-                url=f"https://t.me/emiliaupdates",
+                url=f"https://t.me/emiliabotupdates",
             ),
         ],
         [
-            InlineKeyboardButton(text="Help & Commands", url=f"t.me/{BOT_USERNAME}?start=help"),
+            InlineKeyboardButton(text="Help & Commands", callback_data="bot_commands"),
         ],
     ]
 )
