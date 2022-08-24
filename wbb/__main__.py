@@ -125,7 +125,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Channel",
-                url=f"https://t.me/itsareots",
+                url=f"https://t.me/itsarebots",
             ),
         ],
         [
