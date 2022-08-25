@@ -103,12 +103,12 @@ async def inline_help_func(__HELP__):
             reply_markup=buttons,
         ),
         InlineQueryResultArticle(
-            title="Github Repo",
-            description="Get Github Respository Of Bot.",
+            title="Donate",
+            description="Get Support For This Bot.",
             input_message_content=InputTextMessageContent(
-                "https://github.com/thehamkercat/WilliamButcherBot"
+                "Thanks For Choosing This Option.\n\nThis Bot Is Ccurrently running on free, If AnyOne Donate We Can Change It To VPS Then The Bot Will Work As An Rocket Without Stoping And More powerfully.\n\n Contact @vivek2k6 To Donate"
             ),
-            thumb_url="https://hamker.me/gjc9fo3.png",
+            thumb_url="https://github.com/EmiliaBot/Alita_Robot/blob/main/images.png",
         ),
     ]
     answerss = await alive_function(answerss)
@@ -127,7 +127,8 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[William✨](https://github.com/thehamkercat/WilliamButcherBot):**
+**My Status:**
+
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
