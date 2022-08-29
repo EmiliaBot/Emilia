@@ -135,7 +135,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin My News Channel to get information on all the latest updates. "
+        f"Hey there! My name is Emilia - I'm here to help you manage your groups!\n\nHit /help to find out more about how to use me to my full potential.\n\nJoin [My News Channel](https://t.me/myownbots) to get information on all the latest updates. "
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -192,7 +192,7 @@ async def start(_, message):
         await message.reply(
             home_text_pm,
             reply_markup=home_keyboard_pm,
-            disable_web_page_preview=True
+            disable_web_page_preview=True,
         )
     return
 
@@ -241,9 +241,8 @@ async def help_command(_, message):
                 await message.reply(
                     text,
                     reply_markup=help_keyboard,
-                ),
-            disable_web_page_preview=True,
-        )
+                    disable_web_page_preview=True,
+                )
         else:
             text, help_keyboard = await help_parser(
                 message.from_user.first_name
@@ -268,6 +267,7 @@ Also you can ask anything in Support Group.
         ),
         keyboard,
     )
+
 
 @app.on_callback_query(filters.regex("bot_commands"))
 async def commands_callbacc(_, CallbackQuery):
@@ -320,17 +320,13 @@ General command are:
                 [[InlineKeyboardButton("back", callback_data="help_back")]]
             ),
             disable_web_page_preview=True,
-        )   
-             
-
+        )
     elif home_match:
         await app.send_message(
             query.from_user.id,
             text=home_text_pm,
             reply_markup=home_keyboard_pm,
-            disable_web_page_preview=True
         )
-        
         await query.message.delete()
     elif prev_match:
         curr_page = int(prev_match.group(1))
@@ -340,7 +336,7 @@ General command are:
                 paginate_modules(curr_page - 1, HELPABLE, "help")
             ),
             disable_web_page_preview=True,
-        )    
+        )
 
     elif next_match:
         next_page = int(next_match.group(1))
@@ -370,6 +366,7 @@ General command are:
         )
 
     return await client.answer_callback_query(query.id)
+
 
 if __name__ == "__main__":
     install()
