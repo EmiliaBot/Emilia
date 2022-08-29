@@ -70,7 +70,7 @@ async def start_bot():
     bot_modules = ""
     j = 1
     for i in ALL_MODULES:
-        if j == 7:
+        if j == 4:
             bot_modules += "|{:<15}|\n".format(i)
             j = 0
         else:
@@ -271,6 +271,8 @@ Also you can ask anything in Support Group.
     )
 
 
+OWNER ID = 5491469687
+
 @app.on_callback_query(filters.regex("bot_commands"))
 async def commands_callbacc(_, CallbackQuery):
     text, keyboard = await help_parser(CallbackQuery.from_user.mention)
@@ -371,14 +373,14 @@ General command are:
 
 @app.on_message(~filters.edited & filters.command("donate"))
 def donate(_, message):
-    user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
+    user = await message.from_user
+    chat = await message_chat.  # type: Optional[Chat]
 
     if chat.type == "private":
-        update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        return await message.reply(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
         if OWNER_ID != 5491469687 and DONATION_LINK:
-            update.effective_message.reply_text("You can also donate to the person currently running me "
+            return await message.reply("You can also donate to the person currently running me "
                                                 "[here](https://t.me/devschats",
                                                 parse_mode=ParseMode.MARKDOWN)
 
@@ -386,9 +388,9 @@ def donate(_, message):
         try:
             bot.send_message(user.id, DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
-            update.effective_message.reply_text("I've PM'ed you about donating to my creator!")
+            return await message.reply("I've PM'ed you about donating to my creator!")
         except Unauthorized:
-            update.effective_message.reply_text("Contact me in PM first to get donation information.")
+            return await message.reply("Contact me in PM first to get donation information.")
 
 
 if __name__ == "__main__":
