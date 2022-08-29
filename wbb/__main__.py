@@ -192,7 +192,7 @@ async def start(_, message):
         await message.reply(
             home_text_pm,
             reply_markup=home_keyboard_pm,
-            disable_web_page_preview=True,
+            disable_web_page_preview=True
         )
     return
 
@@ -320,15 +320,17 @@ General command are:
                 [[InlineKeyboardButton("back", callback_data="help_back")]]
             ),
             disable_web_page_preview=True,
-        )
+        )   
+             
+
     elif home_match:
         await app.send_message(
             query.from_user.id,
             text=home_text_pm,
-            reply_markup=home_keyboard_pm
-        ),
-        disable_web_page_preview=True,
-    )
+            reply_markup=home_keyboard_pm,
+            disable_web_page_preview=True
+        )
+        
         await query.message.delete()
     elif prev_match:
         curr_page = int(prev_match.group(1))
