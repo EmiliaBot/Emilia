@@ -272,7 +272,7 @@ Also you can ask anything in Support Group.
     )
 
 
-OWNER ID = 5491469687
+OWNER_ID = 5491469687
 
 @app.on_callback_query(filters.regex("bot_commands"))
 async def commands_callbacc(_, CallbackQuery):
