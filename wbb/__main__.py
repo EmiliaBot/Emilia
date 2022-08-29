@@ -70,7 +70,7 @@ async def start_bot():
     bot_modules = ""
     j = 1
     for i in ALL_MODULES:
-        if j == 4:
+        if j == 7:
             bot_modules += "|{:<15}|\n".format(i)
             j = 0
         else:
@@ -110,6 +110,9 @@ async def start_bot():
         task.cancel()
     log.info("Dead!")
 
+DONATE_STRING = """Thanks For Selecting This Option!
+It took lots of work for my creator to get me to where I am now, and every donation helps To Modify me even better. All the donation money will go to a better VPS to host me. You Can Sent Donation Via [Paytm](http://m.p-y.tm/requestPayment?recipient=9544670463) or [Buy Me A Coffee](https://buymeacoffee.com/vivektp)."""
+
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
@@ -125,7 +128,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Channel",
-                url=f"https://t.me/itsarebots",
+                url=f"https://t.me/myownbots",
             ),
         ],
         [
@@ -153,7 +156,7 @@ keyboard = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Channel",
-                url=f"https://t.me/itsarebots",
+                url=f"https://t.me/myownbots",
             ),
         ],
         [
@@ -365,6 +368,27 @@ General command are:
         )
 
     return await client.answer_callback_query(query.id)
+
+@app.on_message(~filters.edited & filters.command("donate"))
+def donate(_, message):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+        if OWNER_ID != 5491469687 and DONATION_LINK:
+            update.effective_message.reply_text("You can also donate to the person currently running me "
+                                                "[here](https://t.me/devschats",
+                                                parse_mode=ParseMode.MARKDOWN)
+
+    else:
+        try:
+            bot.send_message(user.id, DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+            update.effective_message.reply_text("I've PM'ed you about donating to my creator!")
+        except Unauthorized:
+            update.effective_message.reply_text("Contact me in PM first to get donation information.")
 
 
 if __name__ == "__main__":
