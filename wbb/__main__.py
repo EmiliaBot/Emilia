@@ -110,9 +110,6 @@ async def start_bot():
         task.cancel()
     log.info("Dead!")
 
-DONATE_STRING = """Thanks For Selecting This Option!
-It took lots of work for my creator to get me to where I am now, and every donation helps To Modify me even better. All the donation money will go to a better VPS to host me. You Can Sent Donation Via [Paytm](http://m.p-y.tm/requestPayment?recipient=9544670463) or [Buy Me A Coffee](https://buymeacoffee.com/vivektp)."""
-
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
@@ -244,8 +241,9 @@ async def help_command(_, message):
                 await message.reply(
                     text,
                     reply_markup=help_keyboard,
-                    disable_web_page_preview=True,
-                )
+                ),
+            disable_web_page_preview=True,
+        )
         else:
             text, help_keyboard = await help_parser(
                 message.from_user.first_name
@@ -327,9 +325,10 @@ General command are:
         await app.send_message(
             query.from_user.id,
             text=home_text_pm,
-            reply_markup=home_keyboard_pm,
-            disable_web_page_preview=True,
-        )
+            reply_markup=home_keyboard_pm
+        ),
+        disable_web_page_preview=True,
+    )
         await query.message.delete()
     elif prev_match:
         curr_page = int(prev_match.group(1))
@@ -339,7 +338,7 @@ General command are:
                 paginate_modules(curr_page - 1, HELPABLE, "help")
             ),
             disable_web_page_preview=True,
-        )
+        )    
 
     elif next_match:
         next_page = int(next_match.group(1))
