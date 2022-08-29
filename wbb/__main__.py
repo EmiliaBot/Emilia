@@ -195,6 +195,7 @@ async def start(_, message):
         await message.reply(
             home_text_pm,
             reply_markup=home_keyboard_pm,
+            disable_web_page_preview=True,
         )
     return
 
@@ -330,6 +331,7 @@ General command are:
             query.from_user.id,
             text=home_text_pm,
             reply_markup=home_keyboard_pm,
+            disable_web_page_preview=True,
         )
         await query.message.delete()
     elif prev_match:
