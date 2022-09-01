@@ -115,7 +115,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Add Me To Group",
-                url=f"t.me/EmiliaHeartBot?startgroup=botstart",
+                url=f"t.me/Emilia_GmBot?startgroup=botstart",
             ),
         ],
         [
@@ -143,7 +143,7 @@ keyboard = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Add Me To Group",
-                url=f"t.me/EmiliaHeartBot?startgroup=botstart",
+                url=f"t.me/Emilia_GmBot?startgroup=botstart",
             ),
         ],
         [
